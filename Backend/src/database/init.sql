@@ -26,3 +26,11 @@ CREATE TABLE IF NOT EXISTS teachers (
     specialty VARCHAR(100) NOT NULL,
     status BOOLEAN NOT NULL DEFAULT TRUE
 );
+
+CREATE TABLE IF NOT EXISTS classrooms (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) UNIQUE NOT NULL,
+    building VARCHAR(100) NOT NULL,
+    capacity INTEGER NOT NULL CHECK (capacity > 0),
+    status BOOLEAN NOT NULL DEFAULT TRUE
+);

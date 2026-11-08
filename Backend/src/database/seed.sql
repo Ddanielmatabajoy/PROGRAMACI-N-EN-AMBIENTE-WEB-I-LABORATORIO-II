@@ -26,7 +26,8 @@ INSERT INTO students (
 
 (1009, 'Sebastian Castro', 'sebastian.castro@gmail.com', '3129012345', 'Calle 40 # 18-22', '2001-04-14', 9, TRUE),
 
-(1010, 'Camila Moreno', 'camila.moreno@gmail.com', '3130123456', 'Carrera 25 # 30-12', '2000-07-20', 10, TRUE);
+(1010, 'Camila Moreno', 'camila.moreno@gmail.com', '3130123456', 'Carrera 25 # 30-12', '2000-07-20', 10, TRUE)
+ON CONFLICT DO NOTHING;
 
 INSERT INTO courses (
     name,
@@ -53,10 +54,17 @@ INSERT INTO courses (
 
 ('Desarrollo de Aplicaciones Móviles', 'Fundamentos y desarrollo de aplicaciones para dispositivos móviles.', 3, 7, TRUE),
 
-('Inteligencia Artificial', 'Fundamentos de inteligencia artificial, aprendizaje automático y algoritmos inteligentes.', 4, 8, TRUE);
+('Inteligencia Artificial', 'Fundamentos de inteligencia artificial, aprendizaje automático y algoritmos inteligentes.', 4, 8, TRUE)
+ON CONFLICT (name) DO NOTHING;
 
 INSERT INTO teachers (name, email, phone, specialty, status) VALUES
 ('Ana Maria Rojas', 'ana.rojas@universidad.edu.co', '3001234567', 'Bases de Datos', TRUE),
 ('Carlos Alberto Diaz', 'carlos.diaz@universidad.edu.co', '3012345678', 'Desarrollo de Software', TRUE),
 ('Laura Camila Torres', 'laura.torres@universidad.edu.co', '3023456789', 'Matematicas', TRUE)
 ON CONFLICT (email) DO NOTHING;
+
+INSERT INTO classrooms (name, building, capacity, status) VALUES
+('Aula 101', 'Edificio Central', 30, TRUE),
+('Laboratorio 201', 'Edificio de Ingenierias', 25, TRUE),
+('Aula Magna', 'Edificio Administrativo', 120, TRUE)
+ON CONFLICT (name) DO NOTHING;
