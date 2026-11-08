@@ -54,3 +54,9 @@ INSERT INTO courses (
 ('Desarrollo de Aplicaciones Móviles', 'Fundamentos y desarrollo de aplicaciones para dispositivos móviles.', 3, 7, TRUE),
 
 ('Inteligencia Artificial', 'Fundamentos de inteligencia artificial, aprendizaje automático y algoritmos inteligentes.', 4, 8, TRUE);
+
+INSERT INTO teachers (name, email, phone, specialty, status) VALUES
+('Ana Maria Rojas', 'ana.rojas@universidad.edu.co', '3001234567', 'Bases de Datos', TRUE),
+('Carlos Alberto Diaz', 'carlos.diaz@universidad.edu.co', '3012345678', 'Desarrollo de Software', TRUE),
+('Laura Camila Torres', 'laura.torres@universidad.edu.co', '3023456789', 'Matematicas', TRUE)
+ON CONFLICT (email) DO NOTHING;
